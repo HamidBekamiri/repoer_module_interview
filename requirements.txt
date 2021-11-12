@@ -1,6 +1,7 @@
 nltk
 textblob
 torch
+seaborn
 matplotlib
 streamlit
 transformers
