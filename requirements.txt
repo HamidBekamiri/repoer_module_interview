@@ -1,0 +1,5 @@
+nltk
+torch
+streamlit
+transformers
+
