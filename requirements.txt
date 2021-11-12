@@ -1,4 +1,5 @@
 nltk
+nltk.download('stopwords')
 torch
 streamlit
 transformers
