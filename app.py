@@ -111,7 +111,7 @@ class Interview_report:
         plt.ylabel("Polatiry")
         plt.title("Expert_id vs Polarity")
         # save the figure
-        plt.savefig('/images/plot_1.png', dpi=300, bbox_inches='tight')
+        plt.savefig('https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_1.png', dpi=300, bbox_inches='tight')
         plt.show()
         plt.figure(figsize = (10, 8))
         sns.set_style('whitegrid')
@@ -120,7 +120,7 @@ class Interview_report:
         plt.xlabel("Organization")
         plt.ylabel("Polatiry")
         plt.title("Organization vs Polarity")
-        plt.savefig('/images/plot_2.png', dpi=300, bbox_inches='tight')
+        plt.savefig('https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_2.png', dpi=300, bbox_inches='tight')
         plt.show()
         mean_pol = df_all.groupby('Expert_id')['polarity'].agg([np.mean])
         mean_pol.columns = ['mean_polarity']
@@ -136,20 +136,20 @@ class Interview_report:
         plt.ylabel("Polarity", fontsize=16)
         plt.xlabel("Expert_id", fontsize=16)
         plt.ylim(0, 0.35)
-        plt.savefig('/images/plot_3.png', dpi=300, bbox_inches='tight')
+        plt.savefig('https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_3.png', dpi=300, bbox_inches='tight')
         plt.show()
         plt.figure(figsize=(11, 6))
         sns.countplot(x='Expert_id', data=df_all)
         plt.xlabel("Expert_id")
         plt.title("Number of questions data of each Expert_id")
-        plt.savefig('/images/plot_4.png', dpi=300, bbox_inches='tight')
+        plt.savefig('https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_4.png', dpi=300, bbox_inches='tight')
         plt.show()
         
         plt.figure(figsize=(11, 6))
         sns.countplot(x='Organization', data=df_all)
         plt.xlabel("Organization")
         plt.title("Number of questions data of each Expert_id")
-        plt.savefig('/images/plot_5.png', dpi=300, bbox_inches='tight')
+        plt.savefig('https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_5.png', dpi=300, bbox_inches='tight')
         plt.show()
         # Length of the interview vs the Rating
         # plt.figure(figsize=(11, 6))
@@ -191,17 +191,17 @@ class Interview_report:
         df1 = pd.DataFrame(common_words, columns = ['Answer_clean_1', 'Count'])
         st.write(df1.head())
         df1.groupby('Answer_clean_1').sum()['Count'].sort_values(ascending=False).plot.bar()
-        plt.savefig('/images/plot_9.png', dpi=300, bbox_inches='tight')
+        plt.savefig('https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_9.png', dpi=300, bbox_inches='tight')
         # Frequency Charts
         common_words2 = Interview_report(df).get_top_n_bigram(df_all['answer_clean'], 30)
         df2 = pd.DataFrame(common_words2, columns=['Answer_clean_1', "Count"])
         df2.groupby('Answer_clean_1').sum()['Count'].sort_values(ascending=False).plot(kind='bar', figsize=(10, 6), xlabel = "Bigram Words", ylabel = "Count", title = "Bar chart of Bigrams Frequency")
-        plt.savefig('images/plot_10.png', dpi=300, bbox_inches='tight')
+        plt.savefig('https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/lot_10.png', dpi=300, bbox_inches='tight')
         # Frequency Charts
         common_words3 = Interview_report(df).get_top_n_trigram(df_all['answer_clean'], 30)
         df3 = pd.DataFrame(common_words3, columns = ['Answer_clean_1' , 'Count'])
         df3.groupby('Answer_clean_1').sum()['Count'].sort_values(ascending=False).plot(kind='bar', figsize=(10, 6), xlabel = "Trigrams Words", ylabel = "Count", title = "Bar chart of Trigrams Frequency")
-        plt.savefig('/images/plot_11.png', dpi=300, bbox_inches='tight')
+        plt.savefig('https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_11.png', dpi=300, bbox_inches='tight')
         # Part-of -Speech Tagging
         from textblob import TextBlob, Word, Blobber
         blob = TextBlob(str(df_all['answer_clean']))
@@ -230,7 +230,7 @@ if st.button("Process"):
         df = pd.read_csv(data_file)
         st.dataframe(df)
         Interview_report.visulization_report(df)
-        filteredImages = ['images/plot_1.png', '//images/plot_2.png', '/images/plot_4.png', '/images/plot_5.png', '/images/plot_10.png', '/images/plot_11.png'] # your images here
+        filteredImages = ['https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_1.png', 'https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_2.png', 'https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_4.png', 'https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_5.png', 'https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_9.png','https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_10.png', 'https://github.com/HamidBekamiri/repoer_module_interview/tree/main/images/plot_11.png'] # your images here
         caption = ['Expert_id vs Polarity', 'Organization vs Polarityd', 'Number of questions data of each Expert_id', 'Number of questions data of each Expert_id', 'WordCloud', 'Bar Chart of Top Words Frequency', 'Bar chart of Bigrams Frequency', 'Bar chart of Trigrams Frequency'] # your caption here
         cols = cycle(st.columns(2)) # st.columns here since it is out of beta at the time I'm writing this
         for idx, filteredImage in enumerate(filteredImages):
