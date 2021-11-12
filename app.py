@@ -35,6 +35,7 @@ class Interview_report:
         # Removing Stopwords
         import nltk
         from nltk.corpus import stopwords
+        nltk.download("stopwords")
         stop = stopwords.words('english')
         answer_clean = answer_clean.apply(lambda x: " ".join(x for x in x.split() if x not in stop))
         answer_clean.head()
