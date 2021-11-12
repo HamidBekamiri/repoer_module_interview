@@ -1,4 +1,5 @@
 nltk
+textblob
 torch
 streamlit
 transformers
